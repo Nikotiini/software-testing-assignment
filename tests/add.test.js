@@ -24,6 +24,6 @@ describe('Test Add', () => {
         expect(add("5", "5")).to.equal(0);
     });
     it('Integer overflow', () => {
-        expect(add(Number.MAX_VALUE, 1)).to.throw(Error);
+        expect(add.bind(null, [Number.MAX_VALUE, 1])).to.throw(Error);
     });
 });
