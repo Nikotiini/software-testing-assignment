@@ -15,4 +15,10 @@ describe('Test reduce', () => {
             return result;
         }, {})).to.deep.equal({ 1: ['a','c'], 2: ['b'] });
     });
+    it('Should return a constant value', () => {
+        expect(reduce([1,2,3,4], (accum, val) => 0)).to.equal(0);
+    });
+    it('Should return a copy of the original array', () => {
+        expect(reduce([1,2,3,4], function(accum, val) {return accum.concat(val);}, [])).to.deep.equal([1,2,3,4]);
+    });
 });

@@ -11,4 +11,10 @@ describe('Test map', () => {
     it('Map over empty array', () => {
         expect(map([], square)).to.deep.equal([]);
     });
+    it('Should return a copy of the original array', () => {
+        expect(map([1,2,3,4,5], elem => elem)).to.deep.equal([1,2,3,4,5]);
+    });
+    it('Should return a 2D array', () => {
+        expect(map([1,2,3], elem => [elem, elem+1])).to.deep.equal([[1,2], [2,3], [3,4]]);
+    });
 });
